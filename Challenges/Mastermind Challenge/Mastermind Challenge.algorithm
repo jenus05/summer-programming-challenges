@@ -1,0 +1,66 @@
+set variables as follows:
+    random_number and input_number as empty strings
+    try_count as integer of value 1
+    correct_number_count as integer of value 0
+
+
+try
+    open a file called highscore.txt in read mode
+    pass the lines into a list called highscore_data
+    say that the lowest number of tries was achieved by the (first item in highscore_data) using only (second item in highscore_data) guesses
+    set the highscore variable to the second object in highscore_data as a list
+except if no highscore.txt exists
+    create new highscore.txt
+    set highscore to 0
+    tell the user that it is the first time that the game is being played, therefore their score will be the first highscore.
+
+while true
+    ask the user for a gamemode, either easy, normal, or hard
+
+    if the gamemode is neither of the options
+        then the user that their selection is not valid
+        continue, and go back to the beginning of the loop
+
+    if the gamemode is hard then
+        set variable max_numbers to 5 as integer
+        break out of loop
+
+    else
+        set variable max_numbers to 4 as integer
+        break out of loop
+
+generate a random (maxnumber)-digit length number as follows:
+    append a random digit from 0 to 9 to random_number, maxnumber times
+
+while true
+    ask for a guess at the (maxnumber)-digit long number, set this as input_number
+
+    try
+        converting input_number to integer and back to string
+    catch an exception if it doesn't work
+        tell user to enter only a number and no letters
+        continue to the beginning of the loop
+
+    if the length of the input_number does not match that of max_numbers then
+        tell user to enter a (max_numbers)-digit number
+        return to beginning of loop
+
+    if they guessed correctly then
+        Congratulate them
+        if their lowest score is less than the highscore then
+            ask them for their name, store it in a variable name as string
+            open a file called highscore.txt in overwrite mode
+            write in the file their name and on a new line their number of tries
+            exit the program
+    else
+        increment try_count by 1
+        set correct_number_count to 0 as integer
+        set correct_at_index to empty list as list
+        
+        for count in an list of integers [0, 1, 2, 3]
+            if random_number at index (count) is the same as input_number at index (count) then
+                increment correct_number_count by 1
+                append (count) + 1 to the end of correct_at_index
+        tell the user they got (correct_number_count) out of (max_numbers) numbers correct
+        if the gamemode is easy then
+            tell the user they got the numbers right at positions: (correct_at_index)
