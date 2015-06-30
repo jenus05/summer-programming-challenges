@@ -32,13 +32,13 @@ Good luck! Also read the stuff below.
 Python comment:
 
     # Uses materials by Eugene Lee, 2015:
-    # Found at https://github.com/labcoatlazuli/summer-coding-challenges
+    # Found at https://github.com/labcoatlazuli/summer-programming-challenges
 
 Text comment:
     
     References:
     
-    Example Solutions, algorithms by Eugene Lee, 2015, available at https://github.com/labcoatlazuli/summer-coding-challenges
+    Example Solutions, algorithms by Eugene Lee, 2015, available at https://github.com/labcoatlazuli/summer-programming-challenges
 
 ----
 ## Disclaimer
