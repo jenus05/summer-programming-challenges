@@ -2,6 +2,9 @@ __author__ = 'Eugene'
 
 
 def email_validation_format(email_input):
+    if len(email_input) == 0:
+            print("Please input an email!")  # I should really put this outside the function but my code is too complicated right now for me to bother. Either way it works here.
+            return False
     def email_validation(email):
 
         errors = []
@@ -26,20 +29,19 @@ def email_validation_format(email_input):
         domain_name = email_list[1]
         if "." not in domain_name:
             errors.append("The domain name is invalid, it doesn't have a period")
-            return [False, errors]
+        else:
+            domain_name_list = domain_name.split(".")
 
-        domain_name_list = domain_name.split(".")
+            temp_errors = []
 
-        temp_errors = []
+            [temp_errors.append(
+                "The domain name is invalid. " +
+                "You cannot have a period as the first or last character of the domain name. ")
+             for item in domain_name_list if item == ""]
 
-        [temp_errors.append(
-            "The domain name is invalid. " +
-            "You cannot have a period as the first or last character of the user name. ")
-         for item in domain_name_list if item == ""]
+            [errors.append(item) for item in temp_errors if item not in errors]
 
-        [errors.append(item) for item in temp_errors if item not in errors]
-
-        del temp_errors
+            del temp_errors
 
         user_name = email_list[0]
 

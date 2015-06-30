@@ -1,0 +1,84 @@
+define a function called email_validation_format taking a string email_input as an argument
+    if the email_input is empty
+        tell the user that there is no email!
+        return False, exiting the email_validation_format() function
+
+    define a local function called email_validation taking a string email as an argument
+
+        set a list called errors to an empty list
+
+        if whitespace can be found in the email
+            append to the errors list "The email has whitespace"
+
+        if the "@" character cannot be found in the email
+            append to the errors list "The email does not have an @ character"
+            return a list containing False, and the list of errors
+
+        if the email has more than one "@" character
+            append to the errors list "The email has more than one @ character"
+            return a list containing False, and the list of errors
+
+        set a list called email_elements to the username and the domain name, split using the "@"
+
+        if the length of the username is 0
+            append to the errors list "The email does not have a username."
+
+        if the length of the domain name is 0
+            append to the errors list "The email does not have a domain name"
+
+        set a variable called domain_name as string to the second item (or index 1) of email_list
+
+        if a period "." cannot be found in the domain_name
+            append to the errors list "The domain name is invalid, it doesn't have a period.
+        else:
+            set a list called domain_name_list to the domain_name split using a period separator
+
+            set a list called temp_errors to an empty list
+
+            for every element in temp_errors
+                if the element is empty ie the domain ends or starts with a period
+                    append to the temp_errors list "The domain name is invalid. You cannot have a period as the first or last character of the domain name."
+
+            take all the items from temp_errors and append them to errors ignoring duplicates
+
+            delete temp_errors
+
+        set a variable called user_name to index 0 of email_elements
+
+        if a period is in the username
+            set a list called temp_errors to empty
+            set a list called user_name_list to user_name split using a period separator
+
+            for every element in temp_errors
+                if the element is empty ie the username ends or starts with a period
+                    append to the temp_errors list "The user name is invalid. You cannot have a period as the first or last character of the user name."
+
+            take all the items from temp_errors and append them to errors ignoring duplicates
+
+            delete temp_errors
+
+        if there are no error messages in errors
+            return a list containing [True, errors]
+        else:
+            return a list containing [False, errors]
+
+    set a variable called validation_metadata to the output of the email_validation function
+    print "Email: " followed by the email itself
+    if there were no problems
+        tell the user that there are no problems identified
+    else
+        print "problems:"
+        set a variable called problems to index 1 of validation_metadata
+        for every item in the errors list print the error item
+        print a newline
+
+while True:
+    ask the user whether they want to open a file
+    if yes ask the user for the filename
+    try opening the file in read mode. If it works
+        put every line in the file through email_validation_format() except if the line is empty
+    except if the file cannot be found
+        create a new file with the filename specified
+    else
+        ask the user for an email manually
+        run it through email_validation_format
