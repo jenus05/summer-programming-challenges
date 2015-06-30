@@ -10,8 +10,9 @@ For the questions themselves, see the Code Challenges PDF, questions 1 through 8
 
 Open the Challenges folder. For each question there will be a folder, which will contain:
 
-1.*<A\_python_solution>*.py
-2. *<A\_pseudocode_explanation>*.algorithm
+1. *A_python_solution*.py
+
+2. *A\_pseudocode_explanation*.algorithm
 3. \__init__.py (IGNORE)
 
 Also, if you see any issues, go to the Issues page on the right hand side, and create an issue, telling me what the problem is and your proposed solution is. You don't have to create a GitHub account for this.
