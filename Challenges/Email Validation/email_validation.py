@@ -1,7 +1,7 @@
 __author__ = 'Eugene'
 
 
-def email_validation_format(email_input):
+def email_validation_format(email_input,):
     if len(email_input) == 0:
             print("Please input an email!")  # I should really put this outside the function but my code is too complicated right now for me to bother. Either way it works here.
             return False
@@ -12,11 +12,12 @@ def email_validation_format(email_input):
         if " " in email:
             errors.append("The email has whitespace")
         if "@" not in email:
-            errors.append("The email does not have an @ character.")
+            errors.append(u"The email does not have an @ character.")
             return [False, errors]
         if email.count("@") > 1:
             errors.append("The email has more than one @ character.")
             return [False, errors]
+
 
         email_list = email.split("@")
 
