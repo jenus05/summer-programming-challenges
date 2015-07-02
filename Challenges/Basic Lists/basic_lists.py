@@ -2,14 +2,13 @@ __author__ = 'Eugene'
 
 has_names = False
 input_required = True
-input_first_received = False
 
 while True:
-    if has_names and input_first_received:
+    if has_names:
         if input("Do you want to use a new list of names? Otherwise the list in its current form will continue to" +
                          " be used. Y/N ").lower() in ["y", "yes"]:
             input_required = True
-            input_first_received = False
+            has_names = True
         else:
             input_required = False
     if input_required:
@@ -26,7 +25,7 @@ while True:
                     names = [name.strip() for name in names]
                     names = [name for name in names if name != ""]
                     has_names = True
-                    input_first_received = True
+
 
             except FileNotFoundError:
                 print("File doesn't exist in this directory.")
@@ -40,7 +39,6 @@ while True:
                 print("You didn't enter any names! Please try again.")
                 continue
             has_names = True
-            input_first_received = True
 
     print("What do you want to do with the list? Type the number for the right operation")
     print("1: Print out the list in original order")
