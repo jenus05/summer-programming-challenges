@@ -5,7 +5,7 @@ input_required = True
 input_first_received = False
 
 while True:
-    if has_names and input_first_received == True:
+    if has_names and input_first_received:
         if input("Do you want to use a new list of names? Otherwise the list in its current form will continue to" +
                          " be used. Y/N ").lower() in ["y", "yes"]:
             input_required = True
