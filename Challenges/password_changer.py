@@ -1,18 +1,12 @@
-Enter file contents hereimport re, sqlite3
+import re, sqlite3
 
 regex = re.compile("[\W]")
 
-userdata = sqlite3.connect("userdata.db")
-
-c = userdata.cursor()
 while (True):
 
     username1 = input("Please input a username")
     
-    
-    c.execute("""select password from users where username=?""", (username1,))
-    tablepassword = c.fetchone()
-    print(tablepassword)
+    # Put code for searching for password username pair here
     oldpassword = input("Please input your old password")
     if (tablepassword != oldpassword):
         print("Your old password is wrong.")
@@ -33,7 +27,7 @@ while (True):
             print("Thank you. Your password is now reset.")
 
             # Put code for setting the password here.
-            c.execute("""update users set password = ? where username = ?""", (password1, username1))
+            
 
             if (len(password1) < 10):
                 trustrating += 1
