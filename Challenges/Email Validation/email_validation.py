@@ -40,7 +40,7 @@ def email_validation_format(email_input,):
                 "You cannot have a period as the first or last character of the domain name. ")
              for item in domain_name_list if item == ""]
 
-            [errors.append(item) for item in temp_errors if item not in errors]
+            errors = [item for item in temp_errors if item not in errors]
 
             del temp_errors
 
@@ -50,12 +50,11 @@ def email_validation_format(email_input,):
             temp_errors = []
             user_name_list = user_name.split(".")
 
-            [temp_errors.append(
-                "The user name is invalid." +
+            temp_errors = ["The user name is invalid." +
                 " You cannot have a period as the first or last character of the user name.")
-             for
-             item in user_name_list if item == ""]
-            [errors.append(item) for item in temp_errors if item not in errors]
+             for item in user_name_list if item == ""]
+             
+            errors = [item for item in temp_errors if item not in errors]
 
             del temp_errors
 
