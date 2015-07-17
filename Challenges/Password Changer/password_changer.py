@@ -34,10 +34,10 @@ while (True):
 
     old_password = input("Please input your old password")
     if table_password != old_password:
-        print("Your old password is wrong.")
+        print("The password that you have just entered does not match the one currently associated with your username.")
         continue
     
-    easy_words = ["123456","password",username]
+    easy_words = ["123456","password", username]
     trust_rating = 0
     new_password = input("Please enter a new password")
     for word in easy_words:
