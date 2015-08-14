@@ -4,6 +4,7 @@ has_names = False
 input_required = True
 
 while True:
+
     if has_names:
         if input("Do you want to use a new list of names? Otherwise the list in its current form will continue to" +
                          " be used. Y/N ").lower() in ["y", "yes"]:

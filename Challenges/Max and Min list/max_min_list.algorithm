@@ -1,0 +1,68 @@
+while True
+    ask the user for the minimum value and set to lower_bound
+    ask the user for the maximum value and set to upper_bound
+
+    check that the two values entered are valid numerical values
+        if not continue to beginning of loop
+
+    check that the maximum is not lower than the minimum
+        if so continue to beginning of loop
+
+    notify user that the maximum and minimum were set
+    break out of loop
+
+while True
+    if numbers have already been entered
+        tell the user highest and lowest values entered.
+    else
+        tell the user that nothing has been entered yet so therefore there are no highest and lowest values
+
+    tell the user that they have 3 options
+        type "save" to save numbers overwriting the current save
+        type "recall" to see numbers in save file
+        type a number to continue as usual
+
+    ask the user for their input and set to option as string
+
+    if they want to save
+        if they haven't entered any numbers
+            abort save process
+            notify user
+
+        else
+            open numbers.txt in write mode as a file object f
+                write every number entered into file object
+                notify user
+
+            except if numbers.txt can't be found
+                create new numbers.txt
+                continue to beginning of loop
+
+    else if they want to see existing numbers
+        open numbers.txt in read mode as a file object f
+            convert f to list and set to recall_numbers as list
+            remove empty values from list
+            strip newline characters from list elements
+            remove numbers outside of maximum and minimum scope
+
+            if there are now no numbers in recall_numbers
+                notify user
+                continue to beginning of loop
+
+            print out remaining numbers in recall_numbers
+
+        except if numbers.txt can't be found
+            create new numbers.txt
+            continue to beginning of loop
+
+    else they want to enter a number
+        turn option into a float
+            if option is within maximum and minimum
+                append to session_numbers
+
+            else
+                tell user the number entered is outside of maximum and minimum and hence has been discarded
+
+        except if option is not a valid number
+            notify user
+            continue to beginning of loop

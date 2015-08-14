@@ -1,10 +1,13 @@
 __author__ = 'Eugene'
 
 
-def email_validation_format(email_input,):
+def email_validation_format(email_input):
     if len(email_input) == 0:
-            print("Please input an email!")  # I should really put this outside the function but my code is too complicated right now for me to bother. Either way it works here.
-            return False
+        print(
+            "Please input an email!")  # I should really put this outside the function but my code is too complicated right now for me to bother. Either way it works here.
+
+        return False
+
     def email_validation(email):
 
         errors = []
@@ -18,16 +21,16 @@ def email_validation_format(email_input,):
             errors.append("The email has more than one @ character.")
             return [False, errors]
 
+        email_constituents = email.split("@")
 
-        email_list = email.split("@")
-
-        if len(email_list[0]) == 0:
+        if len(email_constituents[0]) == 0:
             errors.append("The email does not have a username.")
-        if len(email_list[1]) == 0:
+
+        if len(email_constituents[1]) == 0:
             errors.append("The email does not have a domain name")
             return [False, errors]
 
-        domain_name = email_list[1]
+        domain_name = email_constituents[1]
         if "." not in domain_name:
             errors.append("The domain name is invalid, it doesn't have a period")
         else:
@@ -40,24 +43,26 @@ def email_validation_format(email_input,):
                 "You cannot have a period as the first or last character of the domain name. ")
              for item in domain_name_list if item == ""]
 
-            errors = [item for item in temp_errors if item not in errors]
+            # errors = [item for item in temp_errors if item not in errors] Doesn't work - overwrites rather than appends new errors
+            [errors.append(item) for item in temp_errors if item not in errors]
 
             del temp_errors
 
-        user_name = email_list[0]
+        user_name = email_constituents[0]
 
         if "." in user_name:
-            temp_errors = []
             user_name_list = user_name.split(".")
 
-            temp_errors = ["The user name is invalid." +
-                " You cannot have a period as the first or last character of the user name.")
-             for item in user_name_list if item == ""]
-             
+            temp_errors = []
+            for item in user_name_list:
+                if item == "":
+                    temp_errors.append(("The user name is invalid." +
+                                        " You cannot have a period as the first or last character of the user name."))
+
             errors = [item for item in temp_errors if item not in errors]
 
             del temp_errors
-
+        print(errors)
         if len(errors) == 0:
             return [True, errors]
         else:
@@ -72,6 +77,7 @@ def email_validation_format(email_input,):
         problems = validation_metadata[1]
         [print("\t", item) for item in problems if len(problems) != 0]
     print("")
+
 
 while True:
     if input("Do you want to open a file with emails in? Y/N ").lower() in ["y", "yes"]:
