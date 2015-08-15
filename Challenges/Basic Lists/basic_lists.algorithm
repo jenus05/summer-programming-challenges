@@ -1,0 +1,135 @@
+set has_names to False as boolean
+set input_required to True as boolean
+
+while True
+    if has_names is True
+        ask the user whether they would like to use a new list of names
+
+        if so
+            set input_required to True
+
+        else
+            set input_required to False
+
+    if input_required is True
+        ask the user whether they want to load an existing name list
+        if so
+            ask for a filename
+
+            open a file with the specified filename in read mode as a file object f
+                convert f to list and set to names as list
+                strip all newline characters from names
+                strip all leading and trailing whitespace from each name
+                delete any empty names
+                set has_names to True
+            except if the file couldn't be found
+                notify the user
+                continue to beginning of loop
+
+        else
+            ask the user for a list of names and set to names as string
+                convert names to list by splitting at the commas
+                delete any empty names
+                strip leading and trailing whitespace from each name
+
+            if the user hasn't entered any names
+                tell the user to try again
+                continue to beginning of loop
+
+            set has_names to True
+
+    ask the user what they want to do with the list and set to operation as string
+        1 to print out list in original order
+        2 to print out list in reverse order
+        3 to print out eg 3rd name
+        4 to print out portion of the list
+        5 to remove a name from the list by providing the position of the name or a range of positions
+        6 to save the list to a new or existing file
+        7 to make all the names in the list lowercase
+
+
+        if operation is 1
+            print out list of names
+            continue to beginning of loop
+
+        else if operation is 2
+            set temp_names to empty list as list
+            copy the names from names to temp_names
+            reverse the order of temp_names
+            print out temp_names
+            delete temp_names
+            continue to beginning of loop
+
+        else if operation is 3
+            while True
+                ask the user for position of name to print
+                convert to integer
+                except if the number they entered is not a valid integer
+                notify the user
+                continue to beginning of loop
+
+        else if operation is 4
+            while true
+                ask the user for the range of positions they would like to print
+                Split the string by the comma converting it to a list and set it to positions as list
+
+                if they have not entered 2 positions as required
+                    continue to beginning of loop
+
+                except if they did not enter valid numerical values
+                    continue to beginning of loop
+
+                print out the list of names as the user has required
+                except if they have input positions which do not exist
+                    continue to beginning of loop
+
+        else if the operation is 5
+            while true
+                ask the user for either the single position that they would like to remove or the range of positions they would like to remove
+                if they entered an invalid number of values
+                    notify the user
+                    continue to the beginning of the loop
+                except if they did not input valid numerical values
+                    notify the user
+                    continue to beginning of loop
+
+                remove the positions specified
+                except if they have input positions which do not exist
+                    notify the user
+                    continue to beginning of loop
+
+        else if the operation is 6
+            ask the user whether they would like to create a new file to put the names in
+            if so ask the user for the filename required
+                if the file already exists
+                    ask the user whether they would like to replace the file
+                except if the file does not exist
+                    create a new file as specified
+                    save the names
+                    notify the user that the names were saved successfully
+                    continue to beginning of loop
+
+                if the user asked to replace the file
+                    open the file in write mode to overwrite it
+                    save the names
+                    notify the user
+                    continue to beginning of loop
+
+                else
+                    tell the user that the operation was cancelled
+                    continue to beginning of loop
+
+            else
+                ask for the filename that they would like to append the names to
+                open the file as specified
+                add the names
+                except if the file could not be found
+                    notify the user
+                    continue to beginning of loop
+
+        else if the operation is 7
+            for every name in names make it lower case
+               notify the user
+
+        else
+            tell the user that they entered an invalid operator
