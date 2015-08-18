@@ -26,8 +26,7 @@ while True:
             input_required = False
 
     if input_required:
-        if input("Do you want to load up an existing file with a list of names in it? Y/N ").lower() \
-                in ["y", "yes"]:
+        if input("Do you want to load up an existing file with a list of names in it? Y/N ").lower() in ["y", "yes"]:
             filename = input("Please enter the filename of the file, including the extension: ")
 
             try:
@@ -56,9 +55,9 @@ while True:
     print("What do you want to do with the list? Type the number for the right operation")
     print("1: Print out the list in original order")
     print("2: Print out the list in reverse order")
-    print("3: Print out the (eg 3rd) name in the list.")
+    print("3: Print out the (eg 3rd) word in the list.")
     print("4: Print out a portion of the list, eg the 1st to 4th item. (inclusive)")
-    print("5: Remove a name from the list by providing the position of the name, or give a range of positions " +
+    print("5: Remove a word from the list by providing the position of the word, or give a range of positions " +
           "for the names to be removed.")
     print("6: Save the list to a new or existing file.")
     print("7: Make all names in the list lowercase")
@@ -83,7 +82,7 @@ while True:
     elif operation == "3":
         while True:
             try:
-                position = int(input("Please enter the position of the name you want to print: "))
+                position = int(input("Please enter the position of the word you want to print: "))
 
             except ValueError:
                 print("Make sure you enter a single number, with no decimal dots or extra non-numeric characters")
@@ -131,7 +130,7 @@ while True:
                 positions = input("Please input the range of positions that you wish to remove, separated by a comma." +
                                   "\nFor example, if you want to remove the 3rd, 4th and 5th names enter \"3, 5\"." +
                                   "\nIf you want to remove a single item, then just input that single position." +
-                                  "\n For example, if you want to remove the 5th name then input \"5\" ").split(",")
+                                  "\n For example, if you want to remove the 5th word then input \"5\" ").split(",")
 
                 if len(positions) > 2 or len(positions) < 1:
                     print("Please input 2 positions for a range, or one for a single value to be removed")
@@ -163,7 +162,7 @@ while True:
             filename = input("Please input the filename, including file extensions: ")
             try:
                 with open(filename) as f:
-                    overwrite = input("A file with that name already exists. Would you like to replace" +
+                    overwrite = input("A file with that word already exists. Would you like to replace" +
                                       " it with the one you are making now? Y/N ").lower() in ["y", "yes"]
 
             except FileNotFoundError:

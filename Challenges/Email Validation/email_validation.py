@@ -27,20 +27,20 @@ def email_validation_format(email_input):
             errors.append("The email does not have a username.")
 
         if len(email_constituents[1]) == 0:
-            errors.append("The email does not have a domain name")
+            errors.append("The email does not have a domain word")
             return [False, errors]
 
         domain_name = email_constituents[1]
         if "." not in domain_name:
-            errors.append("The domain name is invalid, it doesn't have a period")
+            errors.append("The domain word is invalid, it doesn't have a period")
         else:
             domain_name_list = domain_name.split(".")
 
             temp_errors = []
 
             [temp_errors.append(
-                "The domain name is invalid. " +
-                "You cannot have a period as the first or last character of the domain name. ")
+                "The domain word is invalid. " +
+                "You cannot have a period as the first or last character of the domain word. ")
              for item in domain_name_list if item == ""]
 
             # errors = [item for item in temp_errors if item not in errors] Doesn't work - overwrites rather than appends new errors
@@ -56,8 +56,8 @@ def email_validation_format(email_input):
             temp_errors = []
             for item in user_name_list:
                 if item == "":
-                    temp_errors.append(("The user name is invalid." +
-                                        " You cannot have a period as the first or last character of the user name."))
+                    temp_errors.append(("The user word is invalid." +
+                                        " You cannot have a period as the first or last character of the user word."))
 
             errors = [item for item in temp_errors if item not in errors]
 
@@ -81,7 +81,7 @@ def email_validation_format(email_input):
 
 while True:
     if input("Do you want to open a file with emails in? Y/N ").lower() in ["y", "yes"]:
-        filename = input("Please input the name of the file containing the emails to be validated: ")
+        filename = input("Please input the word of the file containing the emails to be validated: ")
         try:
             with open(filename) as f:
                 email_list = list(f)

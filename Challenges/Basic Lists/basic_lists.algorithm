@@ -63,10 +63,17 @@ while True
         else if operation is 3
             while True
                 ask the user for position of name to print
+
                 convert to integer
                 except if the number they entered is not a valid integer
-                notify the user
-                continue to beginning of loop
+                    notify the user
+                    continue to beginning of loop
+
+                print out name at specified position
+                break out of loop
+                except if the number they entered was an invalid position
+                    notify the user
+                    continue to beginning of loop
 
         else if operation is 4
             while true

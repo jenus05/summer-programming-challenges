@@ -1,0 +1,49 @@
+while true
+    ask the user for a letter and set to letter as string
+    make the letter lowercase
+
+    if they didn't enter a single character
+        tell them to input only one character
+        continue to beginning of loop
+
+    ask the user whether they want to load an existing file
+    if they do
+        ask for the filename
+
+        open the file specified
+            convert the file object to a list set to words as list
+            remove newline characters, whitespace, empty elements from words
+            convert all words to lowercase
+
+            if there are no elements in words
+                notify the user that there were no words found in the file
+                continue to beginning of loop
+
+        except if the file cannot be found
+            notify the user
+            continue to beginning of loop
+
+    else
+        ask the user for a list of words and set to words as list
+        remove whitespace, empty elements from words
+        convert all words to lowercase
+
+        if there are no elements in words
+            notify the user that they didn't enter any words
+            continue to beginning of loop
+
+    tell the user they have two options
+        they can see the words beginning with their letter
+        OR all the words where the letter is a substring regardless of position
+
+    ask the user for their choice and set to operation as string
+
+    if the operation is 1
+        print every word in the list that starts with their chosen letter
+
+    else if the operation is 2
+        print every word in the list that contains their letter
+
+    else
+        tell the user that their choice is invalid
+        continue to beginning of loop

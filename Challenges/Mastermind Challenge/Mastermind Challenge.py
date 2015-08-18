@@ -58,7 +58,7 @@ while True:
     if input_number == random_number:
         print("Congratulations! You found the right number! It took you ", try_count, " tries.")
         if highscore > try_count:
-            name = input("Extra congrats! It seems you have the lowest number of guesses so far! Insert your name here: ")
+            name = input("Extra congrats! It seems you have the lowest number of guesses so far! Insert your word here: ")
             with open("highscore.txt", "w") as f:
                 f.writelines([name + "\n", str(try_count)])
                 f.flush()
