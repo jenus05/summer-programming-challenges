@@ -1,0 +1,10 @@
+Class: Mage
+Name: Ayy-sensei
+Gender: Monster
+Health: 492
+Mana: 508
+Abilities: 
+    Lightning
+    Disarm
+    Trap
+    Shockwave

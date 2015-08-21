@@ -1,0 +1,10 @@
+Class: Assassin
+Name: ArxIsBestGirl
+Gender: Male
+Health: 300
+Mana: 435
+Abilities: 
+    Dodge
+    Decoy
+    Blind
+    Kidnap

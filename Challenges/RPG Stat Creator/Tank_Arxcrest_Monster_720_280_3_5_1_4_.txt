@@ -1,0 +1,10 @@
+Class: Tank
+Name: Arxcrest
+Gender: Monster
+Health: 720
+Mana: 280
+Abilities: 
+    Damage transfer
+    Demolish
+    Engulf
+    Slingshot

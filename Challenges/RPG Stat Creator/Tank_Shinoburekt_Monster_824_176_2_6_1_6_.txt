@@ -1,0 +1,10 @@
+Class: Tank
+Name: Shinoburekt
+Gender: Monster
+Health: 824
+Mana: 176
+Abilities: 
+    Carrier
+    Barrel-roll
+    Engulf
+    Barrel-roll

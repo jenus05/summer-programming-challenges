@@ -1,0 +1,112 @@
+while True
+    ask whether the character is
+        attack oriented
+        support oriented
+        balanced between the two
+    if they input something not specified above
+        notify the user
+        continue to beginning of loop
+    else
+        break out of loop
+
+while True
+    ask whether the character has
+        more health
+        or more mana
+    if they input something not specified above
+        notify the user
+        continue to beginning of loop
+    else
+        break out of loop
+
+set character gender to a random choice of
+    Male
+    Female
+    Oddity
+    Monster
+
+possible classes
+    combatant, mage, healer, assassin, tank
+
+possible combatant abilities
+    Spear, Lunge, Backhand, Slice, Damage boost, Charge!, Auto-Flank
+possible mage abilities
+    Freeze, Trap, Disarm, Fireball, Lightning, Shockwave, Mana Steal
+possible healer abilities
+    Overheal, Shield, Poison, Sandvich, Retreat assist, Insta-health
+possible assassin abilities
+    Dodge, Decoy, Invisibility, Kidnap, Teleport, Blind, Encircle
+possible tank abilities
+    Stomp, Engulf, Carrier, Damage transfer, Slingshot, Demolish, Barrel-roll
+
+if character has more health than mana
+    if character is attack
+        set character class to Combatant
+        set character health to a random integer between 500 and 600
+        set character mana to 1000 - character health
+        set character abilities to 4 random, different choices in combatant abilities
+        compute an ability checksum based on the abilities selected
+
+    if character is balanced
+        set character class to Tank
+        set character health to a random integer between 700 and 800
+        set character mana to 1000 - character health
+        set character abilities to 4 random, different choices in tank abilities
+        compute an ability checksum based on the abilities selected
+
+    if character is support
+        set character class to Tank
+        set character health to a random integer between 800, 900
+        set character mana to 1000 - character health
+        set character abilities to 4 random, different choices in tank abilities
+        compute an ability checksum based on the abilities selected
+
+else
+    if character is attack
+        set character class to Mage
+        set character health to a random integer between 400 and 500
+        set character mana to 1000 - character health
+        set character abilities to 4 random, different choices in Mage abilities
+        compute an ability checksum based on the abilities selected
+
+    if character is balanced
+        set character class to Assassin
+        set character health to a random integer between 300 and 400
+        set character mana to a random integer between 400 and 450
+        set character abilities to 4 random, different choices in assassin abilities
+        compute an ability checksum based on the abilities selected
+
+    if character is support
+        set character class to Healer
+        set character health to a random integer between 300 and 400
+        set character mana to a random integer between 450 and 500
+        set character abilities to 4 random, different choices in healer abilities
+        compute an ability checksum based on the abilities selected
+
+create two lists
+    the first list contains various starting parts of names
+    the second list contains various ending parts of names
+
+select 1 from each list
+join them together
+set as the character name
+
+print out
+    character class
+    character name
+    character gender
+    character health
+    character mana
+    character abilities
+
+create a filename
+    character class + character name + character gender + character health + character mana + ability checksum + .txt file extension
+
+create a new file, with filename specified
+    write to file
+        character class
+        character name
+        character gender
+        character health
+        character mana
+        character abilities

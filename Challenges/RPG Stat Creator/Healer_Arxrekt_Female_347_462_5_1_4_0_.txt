@@ -1,0 +1,10 @@
+Class: Healer
+Name: Arxrekt
+Gender: Female
+Health: 347
+Mana: 462
+Abilities: 
+    Insta-health
+    Shield
+    Retreat assist
+    Overheal

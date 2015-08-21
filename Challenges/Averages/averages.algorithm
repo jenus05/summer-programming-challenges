@@ -1,0 +1,35 @@
+set numbers as an empty list
+try
+    open numbers.txt in read mode
+        ask whether the user wants to see saved numbers
+        if yes, print out the existing numbers
+except if the file cannot be found
+    create new numbers.txt
+        notify the user that there is no existing save file and hence a new one will be made
+
+while True
+    try
+        ask the user for a number
+        convert it into a floating-point number
+    except if a non-numerical value was input
+        tell the user to input a valid numerical value
+        continue and go back to the beginning of the loop
+
+    ask whether the user wants to output the average
+    if yes
+        print mean of the numbers entered so far
+        print median of the numbers entered so far
+        try
+            print mode of the numbers entered so far
+        except there is no mode
+            tell user that there is no mode
+
+    ask whether the user wants to store the numbers in a text file
+    if yes
+        open numbers.txt in write mode
+        write the numbers into the file buffer
+        flush the buffer to write to the file.
+
+    ask whether the user wants to exit the program
+    if yes
+        quit the program
