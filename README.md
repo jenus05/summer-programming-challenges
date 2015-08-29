@@ -13,7 +13,7 @@ Open the Challenges folder. For each question there will be a folder, which will
 1. *A_python_solution*.py
 
 2. *A\_pseudocode_explanation*.algorithm
-3. \__init__.py (IGNORE)
+3. *A_flowchart*.pdf
 
 Also, if you see any issues, go to the Issues page on the right hand side, and create an issue, telling me what the problem is and your proposed solution is. You don't have to create a GitHub account for this.
 
