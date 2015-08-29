@@ -8,8 +8,10 @@ def random_select(input_list: list, no_of_choices: int=1) -> list:
     main_list = input_list.copy()
     for i in range(no_of_choices):
         output_list.append(main_list.pop(random.randint(0, len(main_list) - 1)))
-
-    return output_list
+    if len(output_list) == 1:
+        return output_list[0]
+    else:
+        return output_list
 
 character_abilities = []
 purpose = ""
@@ -108,10 +110,12 @@ else:
 # I gave up trying to think of good name parts a long time ago. It's too hard.
 # Instead, please do enjoy the random anime (Japanese animation), osu! (rhythm game) references and in-jokes.
 # Most of all, please don't take this name generator seriously.
-name_part1 = ["Arx", "Xi", "Bek", "Sha", "HoChi", "Ayy", "Hitagi", "Submarine", "KimitoNatsufes",
-              "Toshino", "AiLaLa", "Eren", "Mikasa", "Akari", "Funami", "Shinobu", "Mashiro", "Nanami"]
-name_part2 = ["bane", "crest", "-senpai", "-sensei", "-san", "-chan", "lmao", "Minh", "Senjougahara",
-              "Spitfire", "rekt", "Kyoko", "Ackerman", "Jaeger", "IsBestGirl", "Oshino", "Yui"]
+name_part1 = ["Arx", "Xi", "Bek", "Sha", "HoChi", "Ayy", "Hitagi", "Submarine", "KimitoNatsufes", "madjohn", "Chitoge"
+              "Toshino", "AiLaLa", "Eren", "Mikasa", "Akari", "Funami", "Shinobu", "Mashiro", "Nanami", "Kosaki",
+              "Megumi", "Kasumigaoka", "Sugiura", "Eriri"]
+name_part2 = ["bane", "crest", "-senpai", "-sensei", "-san", "-chan", "lmao", "Minh", "Senjougahara", "Kirisaki",
+              "Spitfire", "rekt", "Kyoko", "Ackerman", "Jaeger", "IsBestGirl", "Oshino", "Yui", "Onodera", "Kato"
+              "Utaha", "Ayano", "Sawamura"]
 
 character_name = "".join([random.choice(name_part1), random.choice(name_part2)])
 
